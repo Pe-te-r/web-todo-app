@@ -1,0 +1,159 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url("./images/bg-desktop-dark.jpg");
+    background-size: 100% auto;
+    background-position: top center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    font-size: 18px;
+    font-weight: 400;
+    background-color:hsl(235, 24%, 19%);
+}
+
+header{
+    padding: 20px;
+    margin-top: 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ 
+}
+
+nav{
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
+    margin: 30px;
+}
+
+
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .container{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+main .container .input-todo{
+    width: 100%;
+    margin-bottom: 10px;
+    box-shadow: 2px 3px  5px black;
+}
+
+main .container .input-todo input{
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    font-size: 1.3rem;
+    background-color: hsl(235, 24%, 19%);
+    color: hsl(234, 39%, 85%);
+    outline: none;
+    border: none;
+}
+
+main .container .main{
+    box-shadow: 2px 3px  5px rgb(255, 247, 247);
+    /* padding: 8px; */
+    margin: 20px 0px;
+    background-color: hsl(235, 24%, 19%);
+}
+
+main .container .todo-box{
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+main .container .todo-box  label{
+    border-bottom: 1px solid white;
+    padding: 12px 0px;
+    color:hsl(234, 39%, 85%);
+    cursor: pointer;
+    margin: 4px;
+
+}
+
+main .container .todo-footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+}
+
+main .container .todo-footer input, p{
+    margin: 0px 12px;
+    padding: 8px 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: none;
+    color: hsl(233, 14%, 35%);
+
+}
+
+#all{
+
+    color:    hsl(220, 98%, 61%)  ;
+}
+
+main .container .todo-footer input:hover{
+    color:  hsl(236, 33%, 92%) ;
+}
+
+
+
+
+
+input[type="checkbox"] {
+    display: none; 
+}
+
+.custom-radio {
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    display: inline-block;
+    margin-right: 10px;
+    position: relative;
+}
+main .container .todo-box  label:hover .custom-radio{
+    background: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%)),url("./images/icon-cross.svg");
+    background-size: cover;
+}
+
+input[type="checkbox"]:checked + .custom-radio {
+    background: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%)),url("./images/icon-check.svg");
+    background-size: cover;
+}
+input[type="checkbox"]:checked + .custom-radio + .oneTodo {
+    text-decoration: line-through; 
+    color: hsl(233, 14%, 35%);
+}
+.custom-radio::after {
+    content: "";
+    height: 8px;
+    width: 8px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.2s ease;
+}
+
+input[type="checkbox"]:checked + .custom-radio::after {
+    transform: translate(-50%, -50%) scale(1);
+}
